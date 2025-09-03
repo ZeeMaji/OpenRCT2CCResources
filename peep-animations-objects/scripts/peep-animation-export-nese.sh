@@ -1,0 +1,228 @@
+# Batch export north & south angles, while automatically flipping east sprites to face west. Primarily intended for NE & SE facing sprites (eg: Zoo Tycoon sprites)
+# Should also work with directly north & south angled sprites.
+# Exports up to 50 sprites per angle, but should be easy to scale up if your animation exceeds more than 50 sprites per angle.
+
+mkdir export
+
+# Export west angles first.
+
+magick -dispose Background "input-ne.psd" -layers coalesce "output.png"
+
+mv output-1.png export/004-NW.png
+mv output-2.png export/008-NW.png
+mv output-3.png export/012-NW.png
+mv output-4.png export/016-NW.png
+mv output-5.png export/020-NW.png
+mv output-6.png export/024-NW.png
+mv output-7.png export/028-NW.png
+mv output-8.png export/032-NW.png
+mv output-9.png export/036-NW.png
+mv output-10.png export/040-NW.png
+mv output-11.png export/044-NW.png
+mv output-12.png export/048-NW.png
+mv output-13.png export/052-NW.png
+mv output-14.png export/056-NW.png
+mv output-15.png export/060-NW.png
+mv output-16.png export/064-NW.png
+mv output-17.png export/068-NW.png
+mv output-18.png export/072-NW.png
+mv output-19.png export/076-NW.png
+mv output-20.png export/080-NW.png
+mv output-21.png export/084-NW.png
+mv output-22.png export/088-NW.png
+mv output-23.png export/092-NW.png
+mv output-24.png export/096-NW.png
+mv output-25.png export/100-NW.png
+mv output-26.png export/104-NW.png
+mv output-27.png export/108-NW.png
+mv output-28.png export/112-NW.png
+mv output-29.png export/116-NW.png
+mv output-30.png export/120-NW.png
+mv output-31.png export/124-NW.png
+mv output-32.png export/128-NW.png
+mv output-33.png export/132-NW.png
+mv output-34.png export/136-NW.png
+mv output-35.png export/140-NW.png
+mv output-36.png export/144-NW.png
+mv output-37.png export/148-NW.png
+mv output-38.png export/152-NW.png
+mv output-39.png export/156-NW.png
+mv output-40.png export/160-NW.png
+mv output-41.png export/164-NW.png
+mv output-42.png export/168-NW.png
+mv output-43.png export/172-NW.png
+mv output-44.png export/176-NW.png
+mv output-45.png export/180-NW.png
+mv output-46.png export/184-NW.png
+mv output-47.png export/188-NW.png
+mv output-48.png export/192-NW.png
+mv output-49.png export/196-NW.png
+mv output-50.png export/200-NW.png
+
+magick -dispose Background "input-se.psd" -layers coalesce "output.png"
+
+mv output-1.png export/003-SW.png
+mv output-2.png export/007-SW.png
+mv output-3.png export/011-SW.png
+mv output-4.png export/015-SW.png
+mv output-5.png export/019-SW.png
+mv output-6.png export/023-SW.png
+mv output-7.png export/027-SW.png
+mv output-8.png export/031-SW.png
+mv output-9.png export/035-SW.png
+mv output-10.png export/039-SW.png
+mv output-11.png export/043-SW.png
+mv output-12.png export/047-SW.png
+mv output-13.png export/051-SW.png
+mv output-14.png export/055-SW.png
+mv output-15.png export/059-SW.png
+mv output-16.png export/063-SW.png
+mv output-17.png export/067-SW.png
+mv output-18.png export/071-SW.png
+mv output-19.png export/075-SW.png
+mv output-20.png export/079-SW.png
+mv output-21.png export/083-SW.png
+mv output-22.png export/087-SW.png
+mv output-23.png export/091-SW.png
+mv output-24.png export/095-SW.png
+mv output-25.png export/099-SW.png
+mv output-26.png export/103-SW.png
+mv output-27.png export/107-SW.png
+mv output-28.png export/111-SW.png
+mv output-29.png export/115-SW.png
+mv output-30.png export/119-SW.png
+mv output-31.png export/123-SW.png
+mv output-32.png export/127-SW.png
+mv output-33.png export/131-SW.png
+mv output-34.png export/135-SW.png
+mv output-35.png export/139-SW.png
+mv output-36.png export/143-SW.png
+mv output-37.png export/147-SW.png
+mv output-38.png export/151-SW.png
+mv output-39.png export/155-SW.png
+mv output-40.png export/159-SW.png
+mv output-41.png export/163-SW.png
+mv output-42.png export/167-SW.png
+mv output-43.png export/171-SW.png
+mv output-44.png export/175-SW.png
+mv output-45.png export/179-SW.png
+mv output-46.png export/183-SW.png
+mv output-47.png export/187-SW.png
+mv output-48.png export/191-SW.png
+mv output-49.png export/195-SW.png
+mv output-50.png export/199-SW.png
+
+# Flip all currently exported sprites.
+
+for file in export/*.png
+do 
+magick $file -flop ${file%%.png}.png
+done
+
+# Export east angles last.
+
+magick -dispose Background "input-ne.psd" -layers coalesce "output.png"
+
+mv output-1.png export/001-NE.png
+mv output-2.png export/005-NE.png
+mv output-3.png export/009-NE.png
+mv output-4.png export/013-NE.png
+mv output-5.png export/017-NE.png
+mv output-6.png export/021-NE.png
+mv output-7.png export/025-NE.png
+mv output-8.png export/029-NE.png
+mv output-9.png export/033-NE.png
+mv output-10.png export/037-NE.png
+mv output-11.png export/041-NE.png
+mv output-12.png export/045-NE.png
+mv output-13.png export/049-NE.png
+mv output-14.png export/053-NE.png
+mv output-15.png export/057-NE.png
+mv output-16.png export/061-NE.png
+mv output-17.png export/065-NE.png
+mv output-18.png export/069-NE.png
+mv output-19.png export/073-NE.png
+mv output-20.png export/077-NE.png
+mv output-21.png export/081-NE.png
+mv output-22.png export/085-NE.png
+mv output-23.png export/089-NE.png
+mv output-24.png export/093-NE.png
+mv output-25.png export/097-NE.png
+mv output-26.png export/101-NE.png
+mv output-27.png export/105-NE.png
+mv output-28.png export/109-NE.png
+mv output-29.png export/113-NE.png
+mv output-30.png export/117-NE.png
+mv output-31.png export/121-NE.png
+mv output-32.png export/125-NE.png
+mv output-33.png export/129-NE.png
+mv output-34.png export/133-NE.png
+mv output-35.png export/137-NE.png
+mv output-36.png export/141-NE.png
+mv output-37.png export/145-NE.png
+mv output-38.png export/149-NE.png
+mv output-39.png export/153-NE.png
+mv output-40.png export/157-NE.png
+mv output-41.png export/161-NE.png
+mv output-42.png export/165-NE.png
+mv output-43.png export/169-NE.png
+mv output-44.png export/173-NE.png
+mv output-45.png export/177-NE.png
+mv output-46.png export/181-NE.png
+mv output-47.png export/185-NE.png
+mv output-48.png export/189-NE.png
+mv output-49.png export/193-NE.png
+mv output-50.png export/197-NE.png
+
+magick -dispose Background "input-se.psd" -layers coalesce "output.png"
+
+mv output-1.png export/002-SE.png
+mv output-2.png export/006-SE.png
+mv output-3.png export/010-SE.png
+mv output-4.png export/014-SE.png
+mv output-5.png export/018-SE.png
+mv output-6.png export/022-SE.png
+mv output-7.png export/026-SE.png
+mv output-8.png export/030-SE.png
+mv output-9.png export/034-SE.png
+mv output-10.png export/038-SE.png
+mv output-11.png export/042-SE.png
+mv output-12.png export/046-SE.png
+mv output-13.png export/050-SE.png
+mv output-14.png export/054-SE.png
+mv output-15.png export/058-SE.png
+mv output-16.png export/062-SE.png
+mv output-17.png export/066-SE.png
+mv output-18.png export/070-SE.png
+mv output-19.png export/074-SE.png
+mv output-20.png export/078-SE.png
+mv output-21.png export/082-SE.png
+mv output-22.png export/086-SE.png
+mv output-23.png export/090-SE.png
+mv output-24.png export/094-SE.png
+mv output-25.png export/098-SE.png
+mv output-26.png export/102-SE.png
+mv output-27.png export/106-SE.png
+mv output-28.png export/110-SE.png
+mv output-29.png export/114-SE.png
+mv output-30.png export/118-SE.png
+mv output-31.png export/122-SE.png
+mv output-32.png export/126-SE.png
+mv output-33.png export/130-SE.png
+mv output-34.png export/134-SE.png
+mv output-35.png export/138-SE.png
+mv output-36.png export/142-SE.png
+mv output-37.png export/146-SE.png
+mv output-38.png export/150-SE.png
+mv output-39.png export/154-SE.png
+mv output-40.png export/158-SE.png
+mv output-41.png export/162-SE.png
+mv output-42.png export/166-SE.png
+mv output-43.png export/170-SE.png
+mv output-44.png export/174-SE.png
+mv output-45.png export/178-SE.png
+mv output-46.png export/182-SE.png
+mv output-47.png export/186-SE.png
+mv output-48.png export/190-SE.png
+mv output-49.png export/194-SE.png
+mv output-50.png export/198-SE.png
