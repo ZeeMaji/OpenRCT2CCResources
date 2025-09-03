@@ -12,7 +12,7 @@ The scripts come in three different configurations.
 
 The 'all' configuration will export sprites for all four angles separately from input psds named input-ne.psd, input-se.psd, input-sw.psd, and input-nw.psd.
 The 'nese' configuration will export sprites for north east & south east angles from input psds named input-ne.psd and input-se.psd, and then mirror them to face west.
-The 'side' configuration is the simplest configuration will export directly one east facing sprites from an input psd named input-east.psd and mirror them to face west, this will let you import side scroller style sprites.
+The 'side' configuration is the simplest configuration, it will export directly one east facing sprites from an input psd named input-east.psd and mirror them to face west, this will let you import side scroller style sprites.
 
 Simply run the configuration of script you need within a folder containing the corresponding input psd files to batch export all the sprites from the psds into an export folder with file names that match the template object.
 
