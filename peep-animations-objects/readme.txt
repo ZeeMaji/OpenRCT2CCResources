@@ -16,8 +16,6 @@ After this is every sprite the actual peep entity has, for most animation sequen
 The only sprites that do not have directions are the "hanging" sprites, although in most cases you can just ignore this as it's not a required set of sprites as the template object is set up to use the first SW facing walking frame by default.
 
 For convenience, an images table with walking, wave, and joy animations with support for up to 200 sprites in each of them as been provided in the template object. Simply trim it down to suit the needs of your object.
-You can easily modify the offsets of this with a bulk find & replace action in your text editor of choice.
-The X axis should always be half the canvas size of your exported sprites with a minus. Feel free to play around with the Y axis to get the exact heights you need, north & south sprites have separate numbers for ease of find & replace but you can make them the same if you vertically aligned your images in your image editor.
 
 Lastly are the "animationGroups" which define what and how many sprites are used for playing the set animations.
 
